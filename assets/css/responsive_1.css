@@ -1,0 +1,35 @@
+
+/*@updating =))))*/
+
+@media only screen and (max-width: 1024px) {
+.box-container-content {
+    display:none;
+}
+.header__heading-list-icon {
+    display:none;
+}
+.header__heading-list {
+    justify-content: flex-end;
+    display:none;
+}
+.nav {
+    display:none;
+}
+.icon {
+    display:none;
+}
+.container {
+    position: relative;
+    margin:auto;
+    height: calc(100% - 180px);
+}
+.music-play {
+    position: fixed;
+    top:0;
+    height: 200px;
+    display:block;
+}
+.btn-volumn {
+    display:none;
+}
+}
