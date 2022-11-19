@@ -20,6 +20,10 @@ const repeat = $('.icon-repeat');
 const OnVolume = $('.OnVolume');
 const OffVolume = $('.OffVolume');
 const btnSound = $('.btn-volumeOnOff');
+const user = $('.header__heading-user');
+const user_list = $('.user__list-item');
+const ul_user = $('.users-check');
+const app_window = $('.app');
 const app = {
     currentIndex: 0,
     isPlaying: false,
@@ -146,11 +150,10 @@ const app = {
         volumeBtn.onchange = function () {
             const sinkVolume = volumeBtn.value / 100;
             audio.volume = sinkVolume;
-            if(audio.volume === 0) {
+            if (audio.volume === 0) {
                 OffVolume.classList.remove('hidden');
                 OnVolume.classList.add('hidden');
-            }
-            else if(audio.volume > 0) {
+            } else if (audio.volume > 0) {
                 OffVolume.classList.add('hidden');
                 OnVolume.classList.remove('hidden');
             }
@@ -228,8 +231,21 @@ const app = {
                 player.classList.add('playing');
             }
         };
-    }
-    ,
+        // done
+        user_list.onclick = function (e) {
+            console.log(e.target);
+            e.stopPropagation();
+        };
+        user.onclick = function (e) {
+            user_list.classList.toggle('unlock');
+            e.stopPropagation();
+        };
+        app_window.onclick = function (e) {
+            if ($('.user__list-item.unlock') !== null) {
+                $('.user__list-item.unlock').classList.remove('unlock');
+            }
+        };
+    },
     playRandom: function () {
         let newIndex;
         do {
